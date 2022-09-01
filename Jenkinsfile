@@ -32,7 +32,7 @@ pipeline {
 
     stage('Deployment') {
       steps {
-        bat(script: 'dotnet publish eShopOnWeb.sln -o C:\\Users\\houss\\Desktop\\COURS2', returnStatus: true, returnStdout: true)
+        bat(script: 'dotnet publish eShopOnWeb.sln  C:\\Users\\houss\\Desktop\\COURS2', returnStatus: true, returnStdout: true)
       }
     }
 

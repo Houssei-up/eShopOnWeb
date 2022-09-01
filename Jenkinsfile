@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'dotnet build eShopOnWeb -sln'
+        bat(script: 'dotnet build eShopOnWeb.sln', returnStatus: true, returnStdout: true)
       }
     }
 

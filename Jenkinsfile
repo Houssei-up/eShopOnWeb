@@ -11,19 +11,19 @@ pipeline {
       parallel {
         stage('Unit') {
           steps {
-            sh 'dotnet test tests/UnitTests'
+            bat(script: 'dotnet test tests/UnitTests', returnStatus: true, returnStdout: true)
           }
         }
 
         stage('Integration') {
           steps {
-            sh 'dotnet test tests/IntegrationTests'
+            bat(script: 'dotnet test tests/IntegrationTests', returnStatus: true, returnStdout: true)
           }
         }
 
         stage('Fonctional') {
           steps {
-            sh 'dotnet test tests/FonctionalTests'
+            bat(script: 'dotnet test tests/FonctionalTests', returnStatus: true, returnStdout: true)
           }
         }
 
@@ -32,7 +32,7 @@ pipeline {
 
     stage('Deployment') {
       steps {
-        sh 'dotnet publish eShopOnWeb -sln -o C:\\Users\\houss\\Desktop\\COURS2'
+        bat(script: 'dotnet publish eShopOnWeb -sln -o C:\\Users\\houss\\Desktop\\COURS2', returnStatus: true, returnStdout: true)
       }
     }
 
